@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Rames Saljuqi</title>
+    <meta name="description" content="Blog van Rames Saljuqi over het bouwen van websites en wat ik onderweg leer als student Software Engineering.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <p class="site-naam"><a href="index.html">Rames Saljuqi</a></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Over mij</a></li>
+                <li><a href="projecten.html">Projecten</a></li>
+                <li><a href="blog.html" aria-current="page">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Blog</h1>
+            <p class="intro">Korte posts over wat ik bouw en wat ik onderweg leer.</p>
+        </section>
+
+        <section>
+            <h2>Nieuwste posts</h2>
+
+            <article>
+                <h3>Mijn kleuren gecontroleerd op contrast</h3>
+                <p class="meta"><time datetime="2026-09-21">21 september 2026</time></p>
+                <p>Voor deze site heb ik de kleuren van mijn eerste portfolio hergebruikt: crème tekst op een bijna zwarte achtergrond, met goud als accent. Mooi is niet genoeg, het moet ook leesbaar zijn. De WCAG-norm AA vraagt minimaal 4.5:1 contrast voor gewone tekst. Mijn hoofdtekst haalt 15.2:1, de grijze bijschriften 6.4:1 en het goud 9.2:1. Wel een valkuil: goud op crème is maar 1.6:1, dus goud gebruik ik alleen op de donkere achtergrond.</p>
+            </article>
+
+            <article>
+                <h3>Waarom al mijn bestandsnamen klein zijn</h3>
+                <p class="meta"><time datetime="2026-09-21">21 september 2026</time></p>
+                <p>Mijn eerste versie had bestanden als <code>Index.html</code> en een map <code>CSS/</code>. Op mijn Mac werkte alles, want macOS maakt geen verschil tussen hoofdletters en kleine letters. Een webserver doet dat wel: die zoekt naar <code>index.html</code> en vindt <code>Index.html</code> dan niet. Sindsdien is mijn regel: alles in kleine letters, woorden gescheiden door een streepje.</p>
+            </article>
+
+            <article>
+                <h3>Van JavaScript naar alleen HTML en CSS</h3>
+                <p class="meta"><time datetime="2026-09-21">21 september 2026</time></p>
+                <p>Mijn eerste portfolio laadde alle teksten via JavaScript en gebruikte libraries voor animaties en smooth scrolling. Voor deze versie heb ik dat allemaal weggelaten. De teksten staan nu direct in de HTML, zodat de pagina ook werkt zonder JavaScript en een screenreader of zoekmachine meteen alles kan lezen. Het ontwerp is simpeler: één kolom, bovenaan de navigatie en projecten als losse kaartjes.</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rames Saljuqi | gemaakt met HTML &amp; CSS</p>
+    </footer>
+
+</body>
+</html>

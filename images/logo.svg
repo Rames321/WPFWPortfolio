@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C68642;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0522D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="#0d0d0d" stroke="url(#goldGrad)" stroke-width="4"/>
+  
+  <!-- Inner ring decoration -->
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#FFD700" stroke-width="0.5" stroke-dasharray="4 6" opacity="0.4"/>
+
+  <!-- Body / hoodie -->
+  <ellipse cx="100" cy="175" rx="48" ry="28" fill="url(#shirtGrad)"/>
+  <rect x="52" y="148" width="96" height="30" rx="10" fill="url(#shirtGrad)"/>
+
+  <!-- Hoodie pocket with code symbol -->
+  <rect x="82" y="155" width="36" height="18" rx="4" fill="#0d1117" stroke="#FFD700" stroke-width="1"/>
+  <text x="100" y="167" text-anchor="middle" font-family="monospace" font-size="8" fill="#FFD700">&lt;/&gt;</text>
+
+  <!-- Neck -->
+  <rect x="88" y="132" width="24" height="20" rx="4" fill="url(#skinGrad)"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="112" rx="36" ry="40" fill="url(#skinGrad)" filter="url(#shadow)"/>
+
+  <!-- Cartoon beard (dark, thick) -->
+  <ellipse cx="100" cy="138" rx="26" ry="12" fill="#1a0a00"/>
+  <ellipse cx="100" cy="133" rx="24" ry="8" fill="#2a1205"/>
+  <!-- Mustache -->
+  <ellipse cx="100" cy="126" rx="14" ry="5" fill="#1a0a00"/>
+
+  <!-- Eyes (big cartoon eyes) -->
+  <!-- Left eye -->
+  <ellipse cx="85" cy="108" rx="9" ry="10" fill="white"/>
+  <ellipse cx="85" cy="109" rx="6" ry="7" fill="#2c1810"/>
+  <ellipse cx="85" cy="109" rx="4" ry="5" fill="#1a0a00"/>
+  <ellipse cx="87" cy="107" rx="2" ry="2" fill="white"/>
+  
+  <!-- Right eye -->
+  <ellipse cx="115" cy="108" rx="9" ry="10" fill="white"/>
+  <ellipse cx="115" cy="109" rx="6" ry="7" fill="#2c1810"/>
+  <ellipse cx="115" cy="109" rx="4" ry="5" fill="#1a0a00"/>
+  <ellipse cx="117" cy="107" rx="2" ry="2" fill="white"/>
+
+  <!-- Eyebrows (thick, dark) -->
+  <path d="M76 97 Q85 93 94 97" stroke="#1a0a00" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M106 97 Q115 93 124 97" stroke="#1a0a00" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <ellipse cx="100" cy="118" rx="5" ry="4" fill="#9a6030"/>
+
+  <!-- Hair (curly dark hair on top) -->
+  <ellipse cx="100" cy="76" rx="34" ry="18" fill="#1a0a00"/>
+  <ellipse cx="78" cy="82" rx="12" ry="14" fill="#1a0a00"/>
+  <ellipse cx="122" cy="82" rx="12" ry="14" fill="#1a0a00"/>
+  <!-- Hair highlights -->
+  <path d="M70 78 Q80 70 95 75" stroke="#3a1a05" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M90 72 Q100 67 112 72" stroke="#3a1a05" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Laptop in hands -->
+  <!-- Left arm -->
+  <path d="M52 155 Q30 145 28 135 Q26 125 38 122" stroke="url(#skinGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  <!-- Right arm -->
+  <path d="M148 155 Q170 145 172 135 Q174 125 162 122" stroke="url(#skinGrad)" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+  <!-- Laptop base -->
+  <rect x="30" y="130" width="140" height="16" rx="3" fill="#2a2a2a" filter="url(#shadow)"/>
+  <rect x="30" y="130" width="140" height="4" rx="2" fill="#3a3a3a"/>
+  <!-- Trackpad -->
+  <rect x="83" y="135" width="34" height="8" rx="2" fill="#333" stroke="#555" stroke-width="0.5"/>
+
+  <!-- Laptop screen -->
+  <rect x="38" y="85" width="124" height="48" rx="5" fill="#2a2a2a" filter="url(#shadow)"/>
+  <rect x="41" y="88" width="118" height="42" rx="3" fill="url(#screenGrad)"/>
+  
+  <!-- Code on screen -->
+  <text x="48" y="101" font-family="monospace" font-size="6" fill="#FFD700" filter="url(#glow)">const dev = () =&gt; {</text>
+  <text x="52" y="110" font-family="monospace" font-size="6" fill="#4EC9B0">  return "gold";</text>
+  <text x="48" y="119" font-family="monospace" font-size="6" fill="#FFD700">};</text>
+  <!-- Blinking cursor -->
+  <rect x="78" y="113" width="4" height="7" fill="#FFD700" opacity="0.9"/>
+
+  <!-- Gold shine stars around head -->
+  <g filter="url(#glow)">
+    <polygon points="32,68 34,62 36,68 42,68 37,72 39,78 34,74 29,78 31,72 26,68" fill="#FFD700" transform="scale(0.6) translate(22, 32)"/>
+    <polygon points="32,68 34,62 36,68 42,68 37,72 39,78 34,74 29,78 31,72 26,68" fill="#FFD700" transform="scale(0.5) translate(252, 18)"/>
+    <polygon points="32,68 34,62 36,68 42,68 37,72 39,78 34,74 29,78 31,72 26,68" fill="#FFD700" transform="scale(0.4) translate(162, 52)"/>
+  </g>
+
+  <!-- Gold code brackets decoration -->
+  <text x="16" y="108" font-family="monospace" font-size="22" fill="url(#goldGrad)" font-weight="bold" opacity="0.8">&lt;</text>
+  <text x="170" y="108" font-family="monospace" font-size="22" fill="url(#goldGrad)" font-weight="bold" opacity="0.8">/&gt;</text>
+</svg>
