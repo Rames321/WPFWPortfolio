@@ -213,6 +213,40 @@ article .meta {
     outline-offset: 2px;
 }
 
+h3 button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-m);
+    width: 100%;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: start;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+h3 button::after {
+    content: '';
+    flex-shrink: 0;
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    transform: rotate(45deg);
+}
+
+h3 button[aria-expanded="true"]::after {
+    transform: rotate(-135deg);
+}
+
+h3 button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
 img {
     max-width: 100%;
     height: auto;
