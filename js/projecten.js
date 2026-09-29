@@ -52,9 +52,48 @@ const renderProjecten = (lijst, container) => {
     });
 };
 
+const uniekeTechnieken = (lijst) => {
+    const alle = lijst.flatMap((project) => project.tech);
+    return [...new Set(alle)].sort((a, b) => a.localeCompare(b, 'nl'));
+};
+
+const filterOpTech = (lijst, techniek) => {
+    if (techniek === 'Alle') {
+        return lijst;
+    }
+    return lijst.filter((project) => project.tech.includes(techniek));
+};
+
+const toonAantal = (element, aantal, totaal) => {
+    element.textContent = `${aantal} van ${totaal} projecten`;
+};
+
+const markeerKnop = (techniek) => {
+    document.querySelectorAll('#filter-knoppen button').forEach((knop) => {
+        knop.setAttribute('aria-pressed', knop.textContent === techniek);
+    });
+};
+
+const kiesFilter = (techniek) => {
+    const gefilterd = filterOpTech(projecten, techniek);
+    renderProjecten(gefilterd, document.querySelector('#projecten-lijst'));
+    toonAantal(document.querySelector('#projecten-aantal'), gefilterd.length, projecten.length);
+    markeerKnop(techniek);
+};
+
+const maakFilterKnoppen = (container, technieken) => {
+    ['Alle', ...technieken].forEach((techniek) => {
+        const knop = document.createElement('button');
+        knop.type = 'button';
+        knop.textContent = techniek;
+        knop.addEventListener('click', () => kiesFilter(techniek));
+        container.appendChild(knop);
+    });
+};
+
 const startProjecten = () => {
-    const container = document.querySelector('#projecten-lijst');
-    renderProjecten(projecten, container);
+    maakFilterKnoppen(document.querySelector('#filter-knoppen'), uniekeTechnieken(projecten));
+    kiesFilter('Alle');
 };
 
 startProjecten();
