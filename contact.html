@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Rames Saljuqi</title>
+    <meta name="description" content="Neem contact op met Rames Saljuqi via het contactformulier, e-mail, GitHub of LinkedIn.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <p class="site-naam"><a href="index.html">Rames Saljuqi</a></p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Over mij</a></li>
+                <li><a href="projecten.html">Projecten</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h1>Contact</h1>
+            <p class="intro">Een vraag, idee of project? Stuur een bericht.</p>
+        </section>
+
+        <section>
+            <h2>Contactformulier</h2>
+
+            <form id="contactformulier">
+                <p class="hint">Alle velden zijn verplicht.</p>
+
+                <div class="veld">
+                    <label for="naam">Naam</label>
+                    <input type="text" id="naam" name="naam" autocomplete="name" required minlength="2" aria-describedby="naam-fout">
+                    <p id="naam-fout" class="fout"></p>
+                </div>
+
+                <div class="veld">
+                    <label for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-fout">
+                    <p id="email-fout" class="fout"></p>
+                </div>
+
+                <div class="veld">
+                    <label for="bericht">Bericht</label>
+                    <p id="bericht-hint" class="hint">Minimaal 20 tekens.</p>
+                    <textarea id="bericht" name="bericht" rows="6" required minlength="20" aria-describedby="bericht-hint bericht-fout"></textarea>
+                    <p id="bericht-fout" class="fout"></p>
+                </div>
+
+                <button type="submit">Verstuur bericht</button>
+
+                <p id="formulier-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Of direct</h2>
+            <ul>
+                <li><a href="mailto:Rames.saljuqi111@gmail.com">Rames.saljuqi111@gmail.com</a></li>
+                <li><a href="https://github.com/Rames321">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/rames-saljuqi-15158a3b5/">LinkedIn</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rames Saljuqi | gemaakt met HTML, CSS &amp; JavaScript</p>
+    </footer>
+
+</body>
+</html>

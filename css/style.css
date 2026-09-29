@@ -6,6 +6,7 @@
     --muted: #9c937e;
     --line: rgba(236, 227, 207, 0.14);
     --accent: #d4af37;
+    --error: #ff8a80;
 
     --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --font-mono: ui-monospace, Menlo, Consolas, monospace;
@@ -245,6 +246,64 @@ h3 button[aria-expanded="true"]::after {
 h3 button:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
+}
+
+.veld {
+    margin-block-end: var(--space-m);
+}
+
+label {
+    display: block;
+    margin-block-end: 0.25rem;
+    font-weight: 700;
+}
+
+.hint {
+    margin-block: 0 var(--space-s);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: var(--space-s);
+    font: inherit;
+    color: var(--ink);
+    background-color: var(--bg);
+    border: 1px solid var(--muted);
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+[aria-invalid="true"] {
+    border-color: var(--error);
+}
+
+.fout {
+    margin-block: 0.25rem 0;
+    color: var(--error);
+}
+
+button[type="submit"] {
+    padding: var(--space-s) var(--space-l);
+    font: inherit;
+    font-weight: 700;
+    color: var(--bg);
+    background-color: var(--accent);
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button[type="submit"]:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 img {
