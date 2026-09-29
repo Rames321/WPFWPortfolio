@@ -306,6 +306,20 @@ button[type="submit"]:focus-visible {
     outline-offset: 2px;
 }
 
+.github-lijst {
+    list-style: none;
+    padding: 0;
+}
+
+.github-lijst li {
+    padding-block: var(--space-s);
+    border-bottom: 1px solid var(--line);
+}
+
+.github-lijst .meta {
+    margin: 0;
+}
+
 img {
     max-width: 100%;
     height: auto;

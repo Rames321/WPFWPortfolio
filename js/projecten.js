@@ -1,3 +1,5 @@
+const ALLE = 'Alle';
+
 const maakTechLijst = (technieken) => {
     const lijst = document.createElement('ul');
     lijst.className = 'tech';
@@ -58,7 +60,7 @@ const uniekeTechnieken = (lijst) => {
 };
 
 const filterOpTech = (lijst, techniek) => {
-    if (techniek === 'Alle') {
+    if (techniek === ALLE) {
         return lijst;
     }
     return lijst.filter((project) => project.tech.includes(techniek));
@@ -82,7 +84,7 @@ const kiesFilter = (techniek) => {
 };
 
 const maakFilterKnoppen = (container, technieken) => {
-    ['Alle', ...technieken].forEach((techniek) => {
+    [ALLE, ...technieken].forEach((techniek) => {
         const knop = document.createElement('button');
         knop.type = 'button';
         knop.textContent = techniek;
@@ -93,7 +95,7 @@ const maakFilterKnoppen = (container, technieken) => {
 
 const startProjecten = () => {
     maakFilterKnoppen(document.querySelector('#filter-knoppen'), uniekeTechnieken(projecten));
-    kiesFilter('Alle');
+    kiesFilter(ALLE);
 };
 
 startProjecten();
