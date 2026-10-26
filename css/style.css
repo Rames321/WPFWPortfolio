@@ -391,7 +391,7 @@ footer {
 
 @media (min-width: 1024px) {
     :root {
-        --max-width: 64rem;
+        --max-width: 128rem;
     }
 
     body {
