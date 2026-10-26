@@ -381,9 +381,19 @@ footer {
     .avatar {
         margin-block-end: 0;
     }
+
+    #projecten-lijst {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--space-m);
+    }
 }
 
 @media (min-width: 1024px) {
+    :root {
+        --max-width: 64rem;
+    }
+
     body {
         font-size: 1.0625rem;
     }
