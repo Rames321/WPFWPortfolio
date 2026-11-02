@@ -13,6 +13,7 @@ builder.Services.AddDbContext<PortfolioDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddScoped<ProjectService>();
+builder.Services.AddScoped<BlogpostService>();
 
 var app = builder.Build();
 
