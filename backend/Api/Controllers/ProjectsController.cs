@@ -15,7 +15,6 @@ public class ProjectsController : ControllerBase
         _service = service;
     }
 
-    // GET /api/projects
     [HttpGet]
     public async Task<ActionResult<List<ProjectResponseDto>>> GetAll()
     {
@@ -23,7 +22,6 @@ public class ProjectsController : ControllerBase
         return Ok(projects);
     }
 
-    // GET /api/projects/5
     [HttpGet("{id}")]
     public async Task<ActionResult<ProjectResponseDto>> GetById(int id)
     {
@@ -35,7 +33,6 @@ public class ProjectsController : ControllerBase
         return Ok(project);
     }
 
-    // POST /api/projects
     [HttpPost]
     public async Task<ActionResult<ProjectResponseDto>> Create(ProjectCreateDto dto)
     {
@@ -43,7 +40,6 @@ public class ProjectsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = project.Id }, project);
     }
 
-    // PUT /api/projects/5
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, ProjectUpdateDto dto)
     {
@@ -55,7 +51,6 @@ public class ProjectsController : ControllerBase
         return NoContent();
     }
 
-    // DELETE /api/projects/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

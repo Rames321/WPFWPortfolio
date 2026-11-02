@@ -67,3 +67,4 @@ http://localhost:5064/swagger Kun je dan openen en is het klaar.
 2.`dotnet ef migrations add (Naam)
 3.`dotnet ef database update
 4.Het veld ook toevoegen aan de DTO's en de mapping in de service
+

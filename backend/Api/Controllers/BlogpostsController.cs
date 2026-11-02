@@ -15,7 +15,6 @@ public class BlogpostsController : ControllerBase
         _service = service;
     }
 
-    // GET /api/blogposts
     [HttpGet]
     public async Task<ActionResult<List<BlogpostResponseDto>>> GetAll()
     {
@@ -23,7 +22,6 @@ public class BlogpostsController : ControllerBase
         return Ok(blogposts);
     }
 
-    // GET /api/blogposts/5
     [HttpGet("{id}")]
     public async Task<ActionResult<BlogpostResponseDto>> GetById(int id)
     {
@@ -35,7 +33,6 @@ public class BlogpostsController : ControllerBase
         return Ok(blogpost);
     }
 
-    // POST /api/blogposts
     [HttpPost]
     public async Task<ActionResult<BlogpostResponseDto>> Create(BlogpostCreateDto dto)
     {
@@ -43,7 +40,6 @@ public class BlogpostsController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = blogpost.Id }, blogpost);
     }
 
-    // PUT /api/blogposts/5
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, BlogpostUpdateDto dto)
     {
@@ -55,7 +51,6 @@ public class BlogpostsController : ControllerBase
         return NoContent();
     }
 
-    // DELETE /api/blogposts/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

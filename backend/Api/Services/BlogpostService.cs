@@ -73,7 +73,6 @@ public class BlogpostService
         return true;
     }
 
-    // De enige plek waar een Blogpost-entiteit wordt omgezet naar een DTO
     private static BlogpostResponseDto ToDto(Blogpost blogpost)
     {
         return new BlogpostResponseDto

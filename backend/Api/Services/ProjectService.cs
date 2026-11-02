@@ -77,7 +77,6 @@ public class ProjectService
         return true;
     }
 
-    // De enige plek waar een Project-entiteit wordt omgezet naar een DTO
     private static ProjectResponseDto ToDto(Project project)
     {
         return new ProjectResponseDto
