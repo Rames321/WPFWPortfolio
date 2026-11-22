@@ -12,11 +12,19 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddIdentity<User, IdentityRole>()
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+    {
+        options.Password.RequiredLength = 6;
+        options.Password.RequireDigit = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+    })
     .AddEntityFrameworkStores<PortfolioDbContext>();
 
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<BlogpostService>();
+builder.Services.AddScoped<AuthService>();
 
 var app = builder.Build();
 
