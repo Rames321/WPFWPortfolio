@@ -1,5 +1,6 @@
 using Api.Dtos;
 using Api.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers;
@@ -34,6 +35,7 @@ public class BlogpostsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Policy = Policies.KanBewerken)]
     public async Task<ActionResult<BlogpostResponseDto>> Create(BlogpostCreateDto dto)
     {
         var blogpost = await _service.CreateAsync(dto);
@@ -41,6 +43,7 @@ public class BlogpostsController : ControllerBase
     }
 
     [HttpPut("{id}")]
+    [Authorize(Policy = Policies.KanBewerken)]
     public async Task<IActionResult> Update(int id, BlogpostUpdateDto dto)
     {
         var gelukt = await _service.UpdateAsync(id, dto);
@@ -52,6 +55,7 @@ public class BlogpostsController : ControllerBase
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Policy = Policies.KanBewerken)]
     public async Task<IActionResult> Delete(int id)
     {
         var gelukt = await _service.DeleteAsync(id);

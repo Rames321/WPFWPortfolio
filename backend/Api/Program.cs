@@ -1,3 +1,4 @@
+using Api;
 using Api.Data;
 using Api.Models;
 using Api.Services;
@@ -21,6 +22,23 @@ builder.Services.AddIdentity<User, IdentityRole>(options =>
         options.Password.RequireNonAlphanumeric = false;
     })
     .AddEntityFrameworkStores<PortfolioDbContext>();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+        return Task.CompletedTask;
+    };
+    options.Events.OnRedirectToAccessDenied = context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status403Forbidden;
+        return Task.CompletedTask;
+    };
+});
+
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy(Policies.KanBewerken, policy => policy.RequireRole("Editor", "Admin"));
 
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<BlogpostService>();
