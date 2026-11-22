@@ -13,6 +13,8 @@ Images/
 
 DIt zal voornu opdracht 1 mijn begin zijn.
 
+------------
+
 Voor opdracht 3
 Heb ik de volgende keuzes gemaakt:
 .net versie 10
@@ -68,3 +70,35 @@ http://localhost:5064/swagger Kun je dan openen en is het klaar.
 3.`dotnet ef database update
 4.Het veld ook toevoegen aan de DTO's en de mapping in de service
 
+-------------
+
+Opdracht 4
+
+- Rechten: 
+Ik heb gast editor en admin gast mag GET alleen editor en admin alles.
+Nieuwe gebruiker krijgt gast.
+
+Hoe start zie hierboven opdracht 3.
+
+Hoe maak je editor of admin?
+- Eerst maak je een post via register min 6 letters wachtwoord
+
+- Ga naar DBeaver  voer deze query's uit.
+
+- (alle id's zien)
+SELECT Id, Email FROM AspNetUsers;
+
+- (Id betekenissen)
+Geef de rol (`'2'` = Editor, `'3'` = Admin):
+
+- (Admin/editor maken)
+INSERT INTO AspNetUserRoles (UserId, RoleId)
+VALUES ('ID_VAN_DE_GEBRUIKER', '3');
+
+- (editor/admin verwijderen)
+DELETE FROM AspNetUserRoles
+WHERE UserId = 'ID_VANGEBRUIKER'
+  AND RoleId = '3';
+
+
+- Opnieuw inloggen en dan is het goed
