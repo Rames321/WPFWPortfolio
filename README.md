@@ -102,3 +102,20 @@ WHERE UserId = 'ID_VANGEBRUIKER'
 
 
 - Opnieuw inloggen en dan is het goed
+
+Ik heb de coverage gemeten met coverlet via dotnet test. Ik tel de API-code mee,
+maar niet de gegenereerde migraties, omdat die geen eigen logica bevatten.
+
+Resultaat: 98,6% van de regels en 92,5% van de takken.
+
+Alle CRUD-routes, controllers en de project- en blogpostservices zijn volledig gedekt.
+Niet gedekt zijn drie veiligheidspaden in AuthService:
+- het terugdraaien van een account als het toekennen van de rol Gast mislukt;
+- een gebruiker die niet gevonden wordt in GetByEmailAsync;
+- een gebruiker zonder e-mailadres.
+
+Deze paden zijn via een normaal HTTP-verzoek niet te bereiken. Ze vangen alleen
+onverwachte fouten op, dus ik heb er geen kunstmatige tests voor geschreven.
+
+Een hoge coverage bewijst niet dat er geen fouten zijn. Daarom controleren mijn tests
+ook de response, de data in de database en geweigerde verzoeken.
