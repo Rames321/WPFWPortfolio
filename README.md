@@ -124,3 +124,15 @@ Migratie:
 dotnet ef migrations add AddIdentity
 
 dotnet ef database update
+
+Tests:
+- dotnet test backend/Portfolio.slnx
+
+
+- rm -rf /tmp/portfolio-coverage
+
+dotnet test Portfolio.slnx --collect:"XPlat Code Coverage" --results-directory /tmp/portfolio-coverage -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.ExcludeByFile="**/Migrations/*.cs"
+
+reportgenerator -reports:"/tmp/portfolio-coverage/*/coverage.cobertura.xml" -targetdir:/tmp/portfolio-coverage/report -reporttypes:Html
+
+open /tmp/portfolio-coverage/report/index.html
