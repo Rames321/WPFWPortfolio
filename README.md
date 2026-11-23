@@ -119,3 +119,8 @@ onverwachte fouten op, dus ik heb er geen kunstmatige tests voor geschreven.
 
 Een hoge coverage bewijst niet dat er geen fouten zijn. Daarom controleren mijn tests
 ook de response, de data in de database en geweigerde verzoeken.
+
+Migratie:
+dotnet ef migrations add AddIdentity
+
+dotnet ef database update
