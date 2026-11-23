@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Api.Tests;
+namespace Api.Tests.Setup;
 
 public class PortfolioApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
@@ -71,6 +71,31 @@ public class PortfolioApiFactory : WebApplicationFactory<Program>, IAsyncLifetim
 
         await db.Projects.ExecuteDeleteAsync();
         await db.Blogposts.ExecuteDeleteAsync();
+    }
+
+    public async Task<T> VoegToeAsync<T>(T item) where T : class
+    {
+        using var scope = Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<PortfolioDbContext>();
+        ControleerTestDatabase(db);
+
+        db.Set<T>().Add(item);
+        await db.SaveChangesAsync();
+        return item;
+    }
+
+    public async Task<T?> ZoekAsync<T>(int id) where T : class
+    {
+        using var scope = Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<PortfolioDbContext>();
+        return await db.Set<T>().FindAsync(id);
+    }
+
+    public async Task<int> TelAsync<T>() where T : class
+    {
+        using var scope = Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<PortfolioDbContext>();
+        return await db.Set<T>().CountAsync();
     }
 
     public HttpClient MaakClient()
